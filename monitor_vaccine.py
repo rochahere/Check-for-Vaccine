@@ -12,7 +12,7 @@ from secrets import * # Imports your secret information
 while True:
   # Selenium Chrome Driver
   browser = webdriver.Chrome('chromedriver')
-  # URL to checl
+  # URL to be check
   browser.get('https://vaccinatelaredo.timetap.com/#/')
   # Let the page load for 3 seconds
   time.sleep(3)
@@ -22,7 +22,7 @@ while True:
   browser.quit()
   # Parse html data
   soup = BeautifulSoup(html_source,'html.parser')
-  # Find needed html
+  # Find needed html tag
   findID = soup.find("div",{"id":"welcomeText"})  
   # Look for text (if vaccine is available or not)
   if "NOW FULL" in str(findID):
